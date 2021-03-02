@@ -1,0 +1,20 @@
+name: ChatManager
+version: 1.0.0
+main: fr.neiyko.chatmanager.ChatManager
+authors: [ Neiyko ]
+description: Plugin to manage different things in the chat
+commands:
+  clearchat:
+    description: ClearChat
+  lockchat:
+    description: LockChat
+  localclear:
+    description: LocalClear
+  staffchat:
+    description: StaffChat
+    aliases:
+      - sc
+  tempmute:
+    description: Tempmute
+  mute:
+    description: Mute

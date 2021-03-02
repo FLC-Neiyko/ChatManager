@@ -1,0 +1,73 @@
+##########################################################################
+#                 ChatManager by Neiyko - Messages file                  #
+#                 Check frequently for plugin updates!                   #
+##########################################################################
+
+prefix: "&8&l[&c&lChatManager&8&l]"
+not-player-instance: "&cYou must be a player to use this command !"
+
+#############
+# ClearChat #
+#############
+clearchat:
+  clear: "%prefix% &bThe chat has been cleared !"
+  no-permission: "&cYou don't have permission to do that !"
+
+##############
+# LocalClear #
+##############
+localclear:
+  clear: "%prefix% &bYour chat has been cleared !"
+  no-permission: "&cYou don't have permission to do that !"
+
+##############
+#  LockChat  #
+##############
+lockchat:
+  lock: "%prefix% &bThe chat has been locked"
+  unlock: "%prefix% &bThe chat has been unlocked"
+  no-permission: "&cYou don't have permission to do that !"
+  text-on-lock: "%prefix% &bThe chat is locked !"
+
+###############
+#  StaffChat  #
+###############
+staffchat:
+  prefix: "&8[&cStaffChat&8]"
+  no-permission: "%prefix% &cYou don't have permission to do that !"
+  enable: "%prefix% &bEnabled"
+  disable: "%prefix% &bDisabled"
+
+################
+#     Mute     #
+################
+mute:
+  mute: "%prefix% &cYou has been muted indefinitely"
+  unmute: "%prefix% &cYou has been unmuted"
+  author-mute: "&cYou have mute &b%target% &cindefinitely."
+  author-unmute: "&cYou have unmute &b%target%"
+  broadcast: "%prefix% &4%target% &chas been muted indefinitely by &b%author%"
+  no-permission: "&cYou don't have permission to do that !"
+  text-on-mute: "&cYou are mute, you can't write !"
+  no-arguments: "&cPlease specify the necessary arguments &8[&bplayer&8]&c !"
+  #When the first argument is not a player
+  not-a-player: "&cThe first argument is not a player !"
+
+################
+#   AntiSpam   #
+################
+antispam:
+  spam: "&cPlease do not spam the chat!"
+
+#################
+#  AntiInsults  #
+#################
+antiinsults:
+  on-insult: "&cInsults are not tolerated!"
+  staff-message:
+  - "&c╔═══════════╗"
+  - "    &8&l[&9&lAnti-Insults&8&l]"
+  - "&c╚═══════════╝"
+  - "&b&l%player% &6tried to say this:"
+  - ""
+  - "&2%message%"

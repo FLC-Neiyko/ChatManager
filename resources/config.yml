@@ -1,0 +1,86 @@
+##########################################################################
+#               ChatManager by Neiyko - Configuration file               #
+#                 Check frequently for plugin updates!                   #
+##########################################################################
+
+#############
+# ClearChat #
+#############
+clearchat:
+  enable: true
+  permission: "chatmanager.clearchat.use"
+
+##############
+# LocalClear #
+##############
+localclear:
+  enable: true
+  permission-enable: false
+  permission: "chatmanager.localclear.use"
+
+##############
+#  LockChat  #
+##############
+lockchat:
+  enable: true
+  permission: "chatmanager.lockchat.use"
+  bypass-permission: "chatmanager.lockchat.bypass"
+
+###############
+#  StaffChat  #
+###############
+staffchat:
+  enable: true
+  permission: "chatmanager.staffchat.use"
+
+################
+#     Mute     #
+################
+mute:
+  enable: true
+  broadcast: true
+  permission: "chatmanager.mute.use"
+  bypass-permission: "chatmanager.mute.bypass"
+
+################
+#   AntiSpam   #
+################
+antispam:
+  enable: true
+  bypass-permission: "chatmanager.antispam.bypass"
+  #delay: 1000 = 1 seconds / eg: 2 seconds = 2000
+  delay: 1000
+
+#################
+#  AntiInsults  #
+#################
+antiinsults:
+  enable: true
+  bypass-permission: "chatmanager.antiinsults.bypass"
+  staff-receive-permission: "chatmanager.antiinsults.staff"
+  blacklist-words:
+    - "Fuck"
+    - "F*ck"
+    - "Dick head"
+    - "Asshole"
+    - "Son of a b*tch"
+    - "Son of a bitch"
+    - "Bastard"
+    - "Bitch"
+    - "C*nt"
+    - "Cunt"
+    - "Bollocks"
+    - "Bugger"
+    - "Bloody moron"
+    - "Bloody Hell"
+    - "Penis"
+    - "Choad"
+    - "Dick"
+    - "Shag"
+    - "Wank"
+    - "Wanker"
+    - "Suck"
+    - "S*ck"
+    - "Shit"
+    - "Sh*t"
+    - "Fdp"
