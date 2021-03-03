@@ -17,10 +17,11 @@ public class MLoad {
         chatManager.logConsole(Level.INFO, "=== Beginning of loading ===");
         chatManager.logConsole(Level.INFO, "Loading the plugin...");
         chatManager.logConsole(Level.INFO, "----");
-
+        
+        chatManager.getFileManager().initFile();
         chatManager.getCommandsManager().initCommands();
         chatManager.getEventsManager().initEvents();
-        chatManager.getFileManager().initFile();
+        
         dataLoad();
 
         if (chatManager.getError()) errorMSG();
