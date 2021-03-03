@@ -113,7 +113,7 @@ public final class ChatManager extends JavaPlugin {
         return mute;
     }
 
-    public List<String> getStringList(String msg) {
+    public List<String> getConfigStringList(String msg) {
         return fileConfigMessages.getStringList(msg);
     }
 
