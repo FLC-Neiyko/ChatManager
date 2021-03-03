@@ -27,7 +27,7 @@ public class EAntiInsults implements Listener {
                         p.sendMessage(chatManager.getMessage("antiinsults.on-insult").replace("&" , "§"));
                         for (Player player : Bukkit.getOnlinePlayers()) {
                             if (chatManager.hasPermission(player, "antiinsults.staff-receive-permission") || player.isOp()) {
-                                for (String message : chatManager.getStringList("antiinsults.staff-message")) {
+                                for (String message : chatManager.getMessageStringList("antiinsults.staff-message")) {
                                     player.sendMessage(message.replace("%player%", p.getName()).replace("%message%", e.getMessage())
                                             .replace("&", "§"));
                                 }
