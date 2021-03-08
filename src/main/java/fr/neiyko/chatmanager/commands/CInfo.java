@@ -2,6 +2,7 @@ package fr.neiyko.chatmanager.commands;
 
 import fr.neiyko.chatmanager.ChatManager;
 import fr.neiyko.chatmanager.Utils;
+import org.bukkit.Bukkit;
 import org.bukkit.OfflinePlayer;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -24,15 +25,16 @@ public class CInfo implements CommandExecutor {
 
             if (chatManager.getConfig().getBoolean("player-info.permission-enable")) {
                 if (chatManager.hasPermission(p, "player-info.permission")) {
-                    if (target == null) {
+                    if (target != null) {
+                        for (String message : chatManager.getMessageStringList("player-info.page-1")) {
+                            p.sendMessage(message.replace("%player%", target.getName()).replace("%displayname%", target.getDisplayName())
+                                    .replace("%isop%", utils.targetIsOp(target)));
+                            //.replace("%rank%", utils.targetRank(target))
+                            //.replace("%isonline%", utils.targetIsOnline(target)));
+                        }
+                    } else {
                         p.sendMessage(chatManager.getMessage("player-info.not-online").replace("%player%", args[0]).replace("&", "§"));
                         return false;
-                    }
-                    for (String message : chatManager.getMessageStringList("player-info.page-1")) {
-                        p.sendMessage(message.replace("%player%", target.getName()).replace("%displayname%", target.getDisplayName())
-                                .replace("%isop%", utils.targetIsOp(target)));
-                                //.replace("%rank%", utils.targetRank(target))
-                                //.replace("%isonline%", utils.targetIsOnline(target)));
                     }
                 } else {
                     p.sendMessage(chatManager.getMessage("player-info.no-permission").replace("&", "§"));
