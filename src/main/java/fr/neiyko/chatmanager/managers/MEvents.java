@@ -5,6 +5,7 @@ import fr.neiyko.chatmanager.commands.LockChat;
 import fr.neiyko.chatmanager.commands.Mute;
 import fr.neiyko.chatmanager.commands.StaffChat;
 import fr.neiyko.chatmanager.events.EAntiInsults;
+import fr.neiyko.chatmanager.events.EAntiLink;
 import fr.neiyko.chatmanager.events.EAntiSpam;
 import org.bukkit.plugin.PluginManager;
 
@@ -20,5 +21,6 @@ public class MEvents {
         pm.registerEvents(new Mute(), chatManager);
         pm.registerEvents(new EAntiSpam(), chatManager);
         pm.registerEvents(new EAntiInsults(), chatManager);
+        pm.registerEvents(new EAntiLink(), chatManager);
     }
 }

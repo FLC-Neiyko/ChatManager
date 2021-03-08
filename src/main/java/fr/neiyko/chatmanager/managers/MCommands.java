@@ -13,5 +13,7 @@ public class MCommands {
         chatManager.getCommand("localclear").setExecutor(new LocalClear());
         chatManager.getCommand("staffchat").setExecutor(new StaffChat());
         chatManager.getCommand("mute").setExecutor(new Mute());
+        chatManager.getCommand("broadcast").setExecutor(new CBroadcast());
+        chatManager.getCommand("info").setExecutor(new CInfo());
     }
 }

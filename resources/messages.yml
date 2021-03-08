@@ -71,3 +71,43 @@ antiinsults:
   - "&b&l%player% &6tried to say this:"
   - ""
   - "&2%message%"
+
+################
+#   AntiLink   #
+################
+anti-link:
+  on-link: "&cThis link is not tolerated!"
+  staff-message:
+    - "&c╔═════════╗"
+    - "    &8&l[&9&lAnti-Links&8&l]"
+    - "&c╚═════════╝"
+    - "&b&l%player% &6tried to send this link:"
+    - ""
+    - "&2%message%"
+
+#################
+#   Broadcast   #
+#################
+broadcast:
+  prefix: "&8[&cBroadcast&8]&r"
+  #%bprefix% = the line just above
+  #%broadcast% Is the content of the message
+  on-broadcast: "%bprefix% %broadcast%"
+  no-permission: "&cYou don't have permission to do that !"
+
+###############
+# Player Info #
+###############
+player-info:
+  no-permission: "&cYou don't have permission to do that !"
+  not-online: "&b%player% &cis not online !"
+  #%player% -> Player's name
+  page-1:
+    - "&c╔═════════╗"
+    - "&8&l[&9&l%player% Info&8&l]"
+    - "&c╚═════════╝"
+    - "&e✦ &9Name: &b%player%"
+    - "&e✦ &9Display Name: &b%displayname%"
+    - "&e✦ &9OP: &b%isop%"
+    - "&e✦ &9Rank: %rank%"
+    - "&e✦ &9Online: %isonline%"

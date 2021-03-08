@@ -24,6 +24,9 @@ public class MFiles {
         ressourceSetup("blockedwords.yml", true);
         chatManager.fileConfigBlockedWords = YamlConfiguration.loadConfiguration(chatManager.wordsFile);
 
+        ressourceSetup("blockedlinks.yml", true);
+        chatManager.fileConfigLinks = YamlConfiguration.loadConfiguration(chatManager.linksFile);
+
     }
 
     public void ressourceSetup(String fileName, boolean reset) {
@@ -38,7 +41,8 @@ public class MFiles {
             outDir.mkdirs();
         }
         String fileNameString = fileName.toLowerCase();
-        if (fileNameString.equals("config.yml") || fileName.equals("messages.yml") || fileName.equals("data.yml") || fileName.equals("blockedwords.yml")) {
+        if (fileNameString.equals("config.yml") || fileName.equals("messages.yml") || fileName.equals("data.yml") || fileName.equals("blockedwords.yml")
+        || fileName.equals("blockedlinks.yml")) {
             File outFile = new File(chatManager.getDataFolder(), fileName);
             if (!outFile.exists() || reset) {
                 try {

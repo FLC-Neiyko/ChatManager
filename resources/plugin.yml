@@ -3,6 +3,8 @@ version: 1.0.0
 main: fr.neiyko.chatmanager.ChatManager
 authors: [ Neiyko ]
 description: Plugin to manage different things in the chat
+depend:
+  - Vault
 commands:
   clearchat:
     description: ClearChat
@@ -18,3 +20,9 @@ commands:
     description: Tempmute
   mute:
     description: Mute
+  broadcast:
+    description: Broadcast
+    aliases:
+      - bc
+  info:
+    description: Player Info

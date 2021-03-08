@@ -4,9 +4,12 @@ import fr.neiyko.chatmanager.managers.MCommands;
 import fr.neiyko.chatmanager.managers.MEvents;
 import fr.neiyko.chatmanager.managers.MFiles;
 import fr.neiyko.chatmanager.managers.MLoad;
+import net.milkbowl.vault.chat.Chat;
+import net.milkbowl.vault.permission.Permission;
 import org.bukkit.Bukkit;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.Player;
+import org.bukkit.plugin.RegisteredServiceProvider;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import java.io.File;
@@ -26,6 +29,10 @@ public final class ChatManager extends JavaPlugin {
     private MFiles fileManager;
     private boolean error;
 
+    //Vault Side
+    private static Permission perms = null;
+    private static Chat chat = null;
+
     public static ChatManager getInstance() {
         return instance;
     }
@@ -42,6 +49,9 @@ public final class ChatManager extends JavaPlugin {
     public File wordsFile = new File(getDataFolder().getPath() + "/blockedwords.yml");
     public FileConfiguration fileConfigBlockedWords;
 
+    public File linksFile = new File(getDataFolder().getPath() + "/blockedlinks.yml");
+    public FileConfiguration fileConfigLinks;
+
     @Override
     public void onEnable() {
         instance = this;
@@ -50,6 +60,9 @@ public final class ChatManager extends JavaPlugin {
         fileManager = new MFiles();
         commandsManager = new MCommands();
         managerLoad.pluginLoad();
+
+        setupPermissions();
+        setupChat();
     }
 
     @Override
@@ -119,5 +132,29 @@ public final class ChatManager extends JavaPlugin {
 
     public List<String> getBlockedWordsList(String msg) {
         return fileConfigBlockedWords.getStringList(msg);
+    }
+
+    public List<String> getLinksList(String msg) {
+        return fileConfigLinks.getStringList(msg);
+    }
+
+    private boolean setupPermissions() {
+        RegisteredServiceProvider<Permission> rsp = getServer().getServicesManager().getRegistration(Permission.class);
+        perms = rsp.getProvider();
+        return perms != null;
+    }
+
+    private boolean setupChat() {
+        RegisteredServiceProvider<Chat> rsp = getServer().getServicesManager().getRegistration(Chat.class);
+        chat = rsp.getProvider();
+        return chat != null;
+    }
+
+    public static Permission getPerms() {
+        return perms;
+    }
+
+    public static Chat getChat() {
+        return chat;
     }
 }

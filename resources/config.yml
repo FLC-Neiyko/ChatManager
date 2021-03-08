@@ -58,29 +58,27 @@ antiinsults:
   enable: true
   bypass-permission: "chatmanager.antiinsults.bypass"
   staff-receive-permission: "chatmanager.antiinsults.staff"
-  blacklist-words:
-    - "Fuck"
-    - "F*ck"
-    - "Dick head"
-    - "Asshole"
-    - "Son of a b*tch"
-    - "Son of a bitch"
-    - "Bastard"
-    - "Bitch"
-    - "C*nt"
-    - "Cunt"
-    - "Bollocks"
-    - "Bugger"
-    - "Bloody moron"
-    - "Bloody Hell"
-    - "Penis"
-    - "Choad"
-    - "Dick"
-    - "Shag"
-    - "Wank"
-    - "Wanker"
-    - "Suck"
-    - "S*ck"
-    - "Shit"
-    - "Sh*t"
-    - "Fdp"
+
+################
+#   AntiLink   #
+################
+antilink:
+  enable: true
+  bypass-permission: "chatmanager.antilink.bypass"
+  staff-receive-permission: "chatmanager.antilink.staff"
+
+#################
+#   Broadcast   #
+#################
+broadcast:
+  enable: true
+  permission: "chatmanager.broadcast.use"
+
+###############
+# Player Info #
+###############
+player-info:
+  enable: true
+  permission-enable: true
+  #If permission-enable: true
+  permission: "chatmanager.playerinfo.use"
