@@ -27,7 +27,11 @@ public final class ChatManager extends JavaPlugin {
     private MEvents eventsManager;
     private MCommands commandsManager;
     private MFiles fileManager;
+    private Utils utils;
     private boolean error;
+
+    //Info Page
+    public short infoPage = 2;
 
     //Vault Side
     private static Permission perms = null;
@@ -59,6 +63,7 @@ public final class ChatManager extends JavaPlugin {
         eventsManager = new MEvents();
         fileManager = new MFiles();
         commandsManager = new MCommands();
+        utils = new Utils();
         managerLoad.pluginLoad();
 
         setupPermissions();
@@ -156,5 +161,9 @@ public final class ChatManager extends JavaPlugin {
 
     public static Chat getChat() {
         return chat;
+    }
+
+    public Utils getUtils() {
+        return utils;
     }
 }
