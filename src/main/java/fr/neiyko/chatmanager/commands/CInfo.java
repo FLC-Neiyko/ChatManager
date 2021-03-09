@@ -26,7 +26,8 @@ public class CInfo implements CommandExecutor {
             if (chatManager.getConfig().getBoolean("player-info.permission-enable")) {
                 if (chatManager.hasPermission(p, "player-info.permission")) {
                     for (String message : chatManager.getMessageStringList("player-info.page-1")) {
-                        p.sendMessage(message.replace("%player%", target.getName()).replace("%displayname%", utils.targetRank((Player) target) + target.getName())
+                        p.sendMessage(message.replace("%player%", target.getName())
+                                .replace("%displayname%", target.getDisplayName())
                                 .replace("%isop%", utils.targetIsOp(target)));
                         //.replace("%rank%", utils.targetRank(target))
                         //.replace("%isonline%", utils.targetIsOnline(target)));
