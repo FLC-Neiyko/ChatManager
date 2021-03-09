@@ -20,21 +20,16 @@ public class CInfo implements CommandExecutor {
         if (sender instanceof Player) {
 
             Player p = (Player) sender;
-            Player target = chatManager.getServer().getPlayer(args[0]);
+            Player target = (Player) chatManager.getServer().getOfflinePlayer(args[0]);
             //Vault API
 
             if (chatManager.getConfig().getBoolean("player-info.permission-enable")) {
                 if (chatManager.hasPermission(p, "player-info.permission")) {
-                    if (target != null) {
-                        for (String message : chatManager.getMessageStringList("player-info.page-1")) {
-                            p.sendMessage(message.replace("%player%", target.getName()).replace("%displayname%", target.getDisplayName())
-                                    .replace("%isop%", utils.targetIsOp(target)));
-                            //.replace("%rank%", utils.targetRank(target))
-                            //.replace("%isonline%", utils.targetIsOnline(target)));
-                        }
-                    } else {
-                        p.sendMessage(chatManager.getMessage("player-info.not-online").replace("%player%", args[0]).replace("&", "§"));
-                        return false;
+                    for (String message : chatManager.getMessageStringList("player-info.page-1")) {
+                        p.sendMessage(message.replace("%player%", target.getName()).replace("%displayname%", utils.targetRank((Player) target) + target.getName())
+                                .replace("%isop%", utils.targetIsOp(target)));
+                        //.replace("%rank%", utils.targetRank(target))
+                        //.replace("%isonline%", utils.targetIsOnline(target)));
                     }
                 } else {
                     p.sendMessage(chatManager.getMessage("player-info.no-permission").replace("&", "§"));

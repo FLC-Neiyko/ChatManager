@@ -1,5 +1,6 @@
 package fr.neiyko.chatmanager;
 
+import org.bukkit.OfflinePlayer;
 import org.bukkit.entity.Player;
 
 public class Utils {
@@ -10,7 +11,7 @@ public class Utils {
         return utils;
     }
 
-    public String targetIsOp(Player target) {
+    public String targetIsOp(OfflinePlayer target) {
         if (target.isOp()) {
             return "Yes";
         } else {
